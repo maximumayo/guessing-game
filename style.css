@@ -10,13 +10,189 @@
 }
 
 #gameArea {
-    background-color: #acb6c0;
-    margin: 5%;
-    margin-top: 15%;
+    /*background-color: #acb6c0;*/
+    background-color: white;
+    /*margin: 5%;*/
+    /*margin-top: 15%;*/
 }
 
-#display {
-    background-color: black;
-    padding: 5%;
-    margin: 5%;
+/*#display {*/
+    /*background-color: black;*/
+    /*padding: 5%;*/
+    /*margin: 5%;*/
+/*}*/
+
+.square {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    opacity: .6;
+}
+
+.blob {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    opacity: .6;
+}
+
+#main {
+    /*border: 1px solid black;*/
+    position: relative;
+    margin: 0 auto;
+    height: 600px;
+    width: 500px;
+}
+
+#b1 {
+    background-color: red;
+}
+
+#b2 {
+    background-color: blue;
+}
+
+#b3 {
+    background-color: green;
+}
+
+#b4 {
+    background-color: yellow;
+}
+
+#b5 {
+    background-color: orange;
+}
+
+#b6 {
+    background-color: grey;
+}
+
+#b7 {
+    background-color: yellow;
+}
+
+#b8 {
+    background-color: red;
+}
+
+#b9 {
+    background-color: darkblue;
+}
+
+#b10 {
+    background-color: sandybrown;
+}
+
+#b11 {
+    background-color: green;
+}
+
+#b12 {
+    background-color: blue;
+}
+
+#b13 {
+    background-color: green;
+}
+
+#b14 {
+    background-color: yellow;
+}
+
+#b15 {
+    background-color: orange;
+}
+
+#b16 {
+    background-color: grey;
+}
+
+#b17 {
+    background-color: yellow;
+}
+
+#b18 {
+    background-color: magenta;
+}
+
+#b19 {
+    background-color: silver;
+}
+
+#b20 {
+    background-color: mediumvioletred;
+}
+
+#b21 {
+    background-color: red;
+}
+
+#b22 {
+    background-color: darkblue;
+}
+
+#b23 {
+    background-color: sandybrown;
+}
+
+#b24 {
+    background-color: green;
+}
+
+#b25 {
+    background-color: blue;
+}
+
+#b26 {
+    background-color: green;
+}
+
+#b27 {
+    background-color: yellow;
+}
+
+#b28 {
+    background-color: orange;
+}
+
+#b29 {
+    background-color: grey;
+}
+
+#b30 {
+    background-color: yellow;
+}
+
+.input {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    color: black;
+}
+
+.form-group {
+    position: absolute;
+    margin-top: 75px;
+    text-align: center;
+    font-size: 2em;
+    /*color: #acb6c0;*/
+    color: black;
+}
+
+.form-control {
+    width: 25%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.high {
+    background-color: yellow;
+    opacity: .8;
+}
+
+.low {
+    background-color: blue;
+    opacity: .8;
 }
