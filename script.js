@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    backMusic.play();
     $('#submit').click(function () {
         game.makeGuess();
         $('#guessInput').val("");
@@ -43,6 +44,14 @@ guessingGame.prototype = {
             $('#responseDiv').text('You Guessed It! Nice Work!');
             $('#gameArea').removeClass('low high').addClass('win');
             $('.blob, .square').removeClass('blob square');
+            backMusic.pause();
+            backMusic.currentTime = 0;
+            idleMusic.currentTime = 0;
+            idleMusic.addEventListener('ended', function () {
+                idleMusic.currentTime = 0;
+                idleMusic.play();
+            }, false);
+            idleMusic.play();
         }
     },
 
@@ -66,7 +75,7 @@ function motion(ele) {
     $(ele).animate({
         "left": +rand + "px",
         "top": +rand2 + "px"
-    }, 4000, function () {
+    }, 3500, function () {
         if (!ele) {
             return false;
         }
@@ -88,6 +97,11 @@ function moveDivs() {
     }
 }
 
+var backMusic = new Audio('sounds/backing.mp3');
+var idleMusic = new Audio('sounds/intro.mp3');
+
+idleMusic.volume = .3;
+
 //call blobs in motion
 $('document').ready(function () {
     makeDivs();
@@ -96,8 +110,12 @@ $('document').ready(function () {
         game = new guessingGame();
         $('#gameArea').removeClass('win low high');
         $('.blob, .square').removeClass('blob square');
-        $('#guessInput').val(" ");
+        $('#guessInput').val("");
         makeDivs();
         moveDivs();
+        idleMusic.pause();
+        backMusic.currentTime = 0;
+        backMusic.play();
     });
 });
+
