@@ -1,9 +1,14 @@
 $(document).ready(function () {
+    //loop main game music
+    backMusic.addEventListener('ended', function () {
+        backMusic.currentTime = 0;
+        backMusic.play();
+    }, false);
+    backMusic.play();
     $('#submit').click(function () {
         game.makeGuess();
         $('#guessInput').val("");
     });
-
     $('#guessInput').keypress(function (key) {
         if (key.which == 13) {
             game.makeGuess();
@@ -32,17 +37,29 @@ guessingGame.prototype = {
             $('#responseDiv').text(guess + ' is too low. try again');
             $('#gameArea').removeClass('high').addClass('low');
             $('.square').addClass('blob').removeClass('square');
+            down.play();
 
         }
         else if (guess > this.secretNumber) {
             $('#responseDiv').text(guess + ' is too high. try again');
             $('#gameArea').removeClass('low').addClass('high');
             $('.blob').addClass('square').removeClass('blob');
+            up.play();
+
         }
         else {
             $('#responseDiv').text('You Guessed It! Nice Work!');
             $('#gameArea').removeClass('low high').addClass('win');
             $('.blob, .square').removeClass('blob square');
+            backMusic.pause();
+            backMusic.currentTime = 0;
+            winMusic.currentTime = 0;
+            //loop win music
+            winMusic.addEventListener('ended', function () {
+                winMusic.currentTime = 0;
+                winMusic.play();
+            }, false);
+            winMusic.play();
         }
     },
 
@@ -66,7 +83,7 @@ function motion(ele) {
     $(ele).animate({
         "left": +rand + "px",
         "top": +rand2 + "px"
-    }, 4000, function () {
+    }, 3500, function () {
         if (!ele) {
             return false;
         }
@@ -88,6 +105,15 @@ function moveDivs() {
     }
 }
 
+var backMusic = new Audio('sounds/backing.mp3');
+var winMusic = new Audio('sounds/intro.mp3');
+var up = new Audio('sounds/down.mp3');
+var down = new Audio('sounds/up.mp3');
+
+winMusic.volume = .4;
+up.volume = .4;
+down.volume = .4;
+
 //call blobs in motion
 $('document').ready(function () {
     makeDivs();
@@ -96,8 +122,12 @@ $('document').ready(function () {
         game = new guessingGame();
         $('#gameArea').removeClass('win low high');
         $('.blob, .square').removeClass('blob square');
-        $('#guessInput').val(" ");
+        $('#guessInput').val("");
+        $('#responseDiv').text('Give it a try!');
         makeDivs();
         moveDivs();
+        winMusic.pause();
+        backMusic.currentTime = 0;
+        backMusic.play();
     });
 });
