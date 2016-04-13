@@ -3,10 +3,18 @@
     width: 100vw;
 }
 
-.form-group {
+.board {
+    position: absolute;
+    margin-top: 75px;
     text-align: center;
-    font-size: 2em;
-    color: #acb6c0;
+    font-size: 3em;
+    animation: text 4s infinite;
+}
+
+.form-control {
+    width: 25%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 #gameArea {
@@ -29,20 +37,6 @@
     font-size: 1em;
     width: 80%;
     padding: 0;
-}
-
-.form-group {
-    position: absolute;
-    margin-top: 75px;
-    text-align: center;
-    font-size: 3em;
-    animation: text 4s infinite;
-}
-
-.form-control {
-    width: 25%;
-    margin: 0 auto;
-    text-align: center;
 }
 
 .square {
