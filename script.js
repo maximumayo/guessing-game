@@ -5,12 +5,10 @@ $(document).ready(function () {
         backMusic.play();
     }, false);
     backMusic.play();
-
     $('#submit').click(function () {
         game.makeGuess();
         $('#guessInput').val("");
     });
-
     $('#guessInput').keypress(function (key) {
         if (key.which == 13) {
             game.makeGuess();
