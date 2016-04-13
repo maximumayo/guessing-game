@@ -30,15 +30,19 @@ guessingGame.prototype = {
 
         if (guess < this.secretNumber) {
             $('#responseDiv').text(guess + ' is too low. try again');
-            $('#gameArea').css('background-color', 'blue');
+            $('#gameArea').removeClass('high').addClass('low');
+            $('.square').addClass('blob').removeClass('square');
+
         }
         else if (guess > this.secretNumber) {
             $('#responseDiv').text(guess + ' is too high. try again');
-            $('#gameArea').css('background-color', 'yellow');
+            $('#gameArea').removeClass('low').addClass('high');
+            $('.blob').addClass('square').removeClass('blob');
         }
         else {
             $('#responseDiv').text('You Guessed It! Nice Work!');
-            $('#gameArea').css('background-color', 'green');
+            $('#gameArea').removeClass('low high').addClass('win');
+            $('.blob, .square').removeClass('blob square');
         }
     },
 
@@ -52,3 +56,47 @@ guessingGame.prototype = {
 };
 
 var game = new guessingGame();
+
+function motion(ele) {
+    var location = $('#main');
+    var height = location.height() - $(ele).height();
+    var width = location.width() - $(ele).width();
+    var rand = Math.floor(Math.random() * height);
+    var rand2 = Math.floor(Math.random() * width);
+    $(ele).animate({
+        "left": +rand + "px",
+        "top": +rand2 + "px"
+    }, 4000, function () {
+        if (!ele) {
+            return false;
+        }
+        else {
+            motion(ele);
+        }
+    });
+}
+
+function makeDivs() {
+    for (var i = 1; i < 101; i++) {
+        $('#main').prepend('<div class="blob" id="b' + i + '"></div>')
+    }
+}
+
+function moveDivs() {
+    for (var i = 1; i < 101; i++) {
+        motion('#b' + i);
+    }
+}
+
+//call blobs in motion
+$('document').ready(function () {
+    makeDivs();
+    moveDivs();
+    $('#clear').click(function () {
+        game = new guessingGame();
+        $('#gameArea').removeClass('win low high');
+        $('.blob, .square').removeClass('blob square');
+        makeDivs();
+        moveDivs();
+    });
+});

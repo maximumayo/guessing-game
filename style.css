@@ -10,13 +10,125 @@
 }
 
 #gameArea {
-    background-color: #acb6c0;
-    margin: 5%;
-    margin-top: 15%;
+    background-image: url("images/drops.png");
 }
 
-#display {
-    background-color: black;
-    padding: 5%;
-    margin: 5%;
+#main {
+    position: relative;
+    margin: 0 auto;
+    height: 600px;
+    width: 600px;
+}
+
+#guessInput {
+    position: relative;
+    text-align: center;
+    color: black;
+    opacity: .8;
+    height: 2em;
+    font-size: 1em;
+    width: 80%;
+    padding: 0;
+}
+
+.form-group {
+    position: absolute;
+    margin-top: 75px;
+    text-align: center;
+    font-size: 3em;
+    color: black;
+}
+
+.form-control {
+    width: 25%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.square {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    opacity: .5;
+    animation:box 4s infinite;
+}
+
+.blob {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    opacity: .5;
+    animation:rainbow 4s infinite;
+}
+
+.high {
+    opacity: .8;
+    animation:high 5s infinite;
+}
+
+.low {
+    opacity: .8;
+    animation:low 5s infinite;
+}
+
+.win {
+    opacity: 1;
+    background-color: green;
+}
+
+@-webkit-keyframes rainbow {
+    0% {background-color: #DB4040;}
+    10% {background-color: #FA9937;}
+    20% {background-color: #F5E589;}
+    30% {background-color: #99D65C;}
+    40% {background-color: #3FBF50;}
+    50% {background-color: #55C98F;}
+    60% {background-color: #3FDDE8;}
+    70% {background-color: #2D7ECF;}
+    80% {background-color: #3434AD;}
+    90% {background-color: #7D3CBD;}
+    100% {background-color: #F1428F;}
+}
+
+@-webkit-keyframes low {
+    0% {background-color: blue;}
+    10% {background-color: blueviolet;}
+    20% {background-color: lightgrey;}
+    30% {background-color: gray;}
+    40% {background-color: blue;}
+    50% {background-color: black;}
+    60% {background-color: darkslategray;}
+    70% {background-color: silver;}
+    80% {background-color: blue;}
+    90% {background-color: blueviolet;}
+    100% {background-color: darkblue;}
+}
+
+@-webkit-keyframes high {
+    0% {background-color: red;}
+    10% {background-color: orange;}
+    20% {background-color: yellow;}
+    30% {background-color: orange;}
+    40% {background-color: red;}
+    50% {background-color: orange;}
+    60% {background-color: yellow;}
+    70% {background-color: orange;}
+    80% {background-color: orangered;}
+    90% {background-color: red;}
+    100% {background-color: yellow;}
+}
+
+@-webkit-keyframes box {
+    0% {background-color: black;}
+    10% {background-color: darkgray;}
+    20% {background-color: brown;}
+    30% {background-color: firebrick;}
+    40% {background-color: black;}
+    50% {background-color: brown;}
+    60% {background-color: sandybrown;}
+    70% {background-color: saddlebrown;}
+    80% {background-color: black;}
+    90% {background-color: darkgray;}
+    100% {background-color: black;}
 }

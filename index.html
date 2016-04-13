@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Guessing Game</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/questionmark.png">
     <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
@@ -10,21 +11,26 @@
 
 <body id="gameArea">
 
-<form class="form-group">
+<div id="main">
 
-    <input class="form-control" placeholder="guess the number" id="guessInput" type="number" required>
+    <form class="form-group">
 
-    <div id="display">
+        <input class="form-control" placeholder="? ? ?" id="guessInput" type="number" required>
 
-        <div>Guess the secret number between 1 and 100</div>
+        <div id="display">
 
-        <div id="responseDiv">Give it a try</div>
+            <div>Guess the secret number between 1 and 100</div>
 
-    </div>
+            <div id="responseDiv">Give it a try!</div>
 
-    <button id="submit" class="btn btn-success" type="button">Take a guess!!</button>
+        </div>
 
-</form>
+        <button id="submit" class="btn btn-success" type="button">Take a guess!!</button>
+        <button id="clear" class="btn btn-danger" type="button">Play Again!!</button>
+
+    </form>
+
+</div>
 
 </body>
 </html>
