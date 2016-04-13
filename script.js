@@ -96,6 +96,7 @@ $('document').ready(function () {
         game = new guessingGame();
         $('#gameArea').removeClass('win low high');
         $('.blob, .square').removeClass('blob square');
+        $('#guessInput').val(" ");
         makeDivs();
         moveDivs();
     });
