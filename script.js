@@ -37,12 +37,14 @@ guessingGame.prototype = {
             $('#responseDiv').text(guess + ' is too low. Try again...');
             $('#gameArea').removeClass('high').addClass('low');
             $('.square').addClass('blob').removeClass('square');
+            down.currentTime = 0;
             down.play();
         }
         else if (guess > this.secretNumber) {
             $('#responseDiv').text(guess + ' is too high. Try again...');
             $('#gameArea').removeClass('low').addClass('high');
             $('.blob').addClass('square').removeClass('blob');
+            up.currentTime = 0;
             up.play();
         }
         else {
