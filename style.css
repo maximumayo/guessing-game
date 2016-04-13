@@ -191,13 +191,21 @@
 
 @-webkit-keyframes win {
     0% {background-color: green;}
+    15% {background-color: darkgreen;}
+    25% {background-color: green;}
     50% {background-color: darkgreen;}
+    65% {background-color: green;}
+    85% {background-color: darkgreen;}
     100% {background-color: green;}
 }
 
 @keyframes win {
     0% {background-color: green;}
+    15% {background-color: darkgreen;}
+    25% {background-color: green;}
     50% {background-color: darkgreen;}
+    65% {background-color: green;}
+    85% {background-color: darkgreen;}
     100% {background-color: green;}
 }
 
