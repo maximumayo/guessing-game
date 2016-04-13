@@ -28,7 +28,6 @@ guessingGame.prototype = {
 
     generateNumber: function () {
         this.secretNumber = Math.floor(this.minNumber + (Math.random() * this.maxNumber));
-        console.log('secret number is: ', this.secretNumber);
     },
 
     checkGuess: function (guess) {
