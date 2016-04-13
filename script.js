@@ -92,4 +92,11 @@ function moveDivs() {
 $('document').ready(function () {
     makeDivs();
     moveDivs();
+    $('#clear').click(function () {
+        game = new guessingGame();
+        $('#gameArea').removeClass('win low high');
+        $('.blob, .square').removeClass('blob square');
+        makeDivs();
+        moveDivs();
+    });
 });
