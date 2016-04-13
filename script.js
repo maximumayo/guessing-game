@@ -30,15 +30,18 @@ guessingGame.prototype = {
 
         if (guess < this.secretNumber) {
             $('#responseDiv').text(guess + ' is too low. try again');
-            $('#gameArea').css('background-color', 'blue');
+            $('#gameArea').removeClass('high').addClass('low');
+            $('.square').addClass('blob').removeClass('square');
+
         }
         else if (guess > this.secretNumber) {
             $('#responseDiv').text(guess + ' is too high. try again');
-            $('#gameArea').css('background-color', 'yellow');
+            $('#gameArea').removeClass('low').addClass('high');
+            $('.blob').addClass('square').removeClass('blob');
         }
         else {
             $('#responseDiv').text('You Guessed It! Nice Work!');
-            $('#gameArea').css('background-color', 'green');
+            //$('#gameArea').css('background-color', 'green');
         }
     },
 
@@ -72,36 +75,20 @@ function motion(ele) {
     });
 }
 
+function makeDivs() {
+    for (var i = 1; i < 101; i++) {
+        $('#main').prepend('<div class="blob" id="b' + i + '"></div>')
+    }
+}
+
+function moveDivs() {
+    for (var i = 1; i < 101; i++) {
+        motion('#b' + i);
+    }
+}
+
 //call blobs in motion
 $('document').ready(function () {
-    motion('#b1');
-    motion('#b2');
-    motion('#b3');
-    motion('#b4');
-    motion('#b5');
-    motion('#b6');
-    motion('#b7');
-    motion('#b8');
-    motion('#b9');
-    motion('#b10');
-    motion('#b11');
-    motion('#b12');
-    motion('#b13');
-    motion('#b14');
-    motion('#b15');
-    motion('#b16');
-    motion('#b17');
-    motion('#b18');
-    motion('#b19');
-    motion('#b20');
-    motion('#b21');
-    motion('#b22');
-    motion('#b23');
-    motion('#b24');
-    motion('#b25');
-    motion('#b26');
-    motion('#b27');
-    motion('#b28');
-    motion('#b29');
-    motion('#b30');
+    makeDivs();
+    moveDivs();
 });

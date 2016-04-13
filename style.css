@@ -10,174 +10,32 @@
 }
 
 #gameArea {
-    /*background-color: #acb6c0;*/
-    background-color: white;
-    /*margin: 5%;*/
-    /*margin-top: 15%;*/
-}
-
-/*#display {*/
-    /*background-color: black;*/
-    /*padding: 5%;*/
-    /*margin: 5%;*/
-/*}*/
-
-.square {
-    position: absolute;
-    height: 200px;
-    width: 200px;
-    opacity: .6;
-}
-
-.blob {
-    position: absolute;
-    height: 200px;
-    width: 200px;
-    border-radius: 100px;
-    opacity: .6;
+    background-image: url("images/drops.png");
 }
 
 #main {
-    /*border: 1px solid black;*/
     position: relative;
     margin: 0 auto;
     height: 600px;
-    width: 500px;
+    width: 600px;
 }
 
-#b1 {
-    background-color: red;
-}
-
-#b2 {
-    background-color: blue;
-}
-
-#b3 {
-    background-color: green;
-}
-
-#b4 {
-    background-color: yellow;
-}
-
-#b5 {
-    background-color: orange;
-}
-
-#b6 {
-    background-color: grey;
-}
-
-#b7 {
-    background-color: yellow;
-}
-
-#b8 {
-    background-color: red;
-}
-
-#b9 {
-    background-color: darkblue;
-}
-
-#b10 {
-    background-color: sandybrown;
-}
-
-#b11 {
-    background-color: green;
-}
-
-#b12 {
-    background-color: blue;
-}
-
-#b13 {
-    background-color: green;
-}
-
-#b14 {
-    background-color: yellow;
-}
-
-#b15 {
-    background-color: orange;
-}
-
-#b16 {
-    background-color: grey;
-}
-
-#b17 {
-    background-color: yellow;
-}
-
-#b18 {
-    background-color: magenta;
-}
-
-#b19 {
-    background-color: silver;
-}
-
-#b20 {
-    background-color: mediumvioletred;
-}
-
-#b21 {
-    background-color: red;
-}
-
-#b22 {
-    background-color: darkblue;
-}
-
-#b23 {
-    background-color: sandybrown;
-}
-
-#b24 {
-    background-color: green;
-}
-
-#b25 {
-    background-color: blue;
-}
-
-#b26 {
-    background-color: green;
-}
-
-#b27 {
-    background-color: yellow;
-}
-
-#b28 {
-    background-color: orange;
-}
-
-#b29 {
-    background-color: grey;
-}
-
-#b30 {
-    background-color: yellow;
-}
-
-.input {
+#guessInput {
     position: relative;
     text-align: center;
-    margin: 0 auto;
     color: black;
+    opacity: .8;
+    height: 2em;
+    font-size: 1em;
+    width: 80%;
+    padding: 0;
 }
 
 .form-group {
     position: absolute;
     margin-top: 75px;
     text-align: center;
-    font-size: 2em;
-    /*color: #acb6c0;*/
+    font-size: 3em;
     color: black;
 }
 
@@ -187,12 +45,86 @@
     text-align: center;
 }
 
+.square {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    opacity: .5;
+    animation:box 4s infinite;
+}
+
+.blob {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+    opacity: .5;
+    animation:rainbow 4s infinite;
+}
+
+
 .high {
-    background-color: yellow;
     opacity: .8;
+    animation:high 5s infinite;
 }
 
 .low {
-    background-color: blue;
     opacity: .8;
+    animation:low 5s infinite;
+}
+
+@-webkit-keyframes rainbow {
+    0% {background-color: #DB4040;}
+    10% {background-color: #FA9937;}
+    20% {background-color: #F5E589;}
+    30% {background-color: #99D65C;}
+    40% {background-color: #3FBF50;}
+    50% {background-color: #55C98F;}
+    60% {background-color: #3FDDE8;}
+    70% {background-color: #2D7ECF;}
+    80% {background-color: #3434AD;}
+    90% {background-color: #7D3CBD;}
+    100% {background-color: #F1428F;}
+}
+
+@-webkit-keyframes low {
+    0% {background-color: blue;}
+    10% {background-color: blueviolet;}
+    20% {background-color: lightgrey;}
+    30% {background-color: gray;}
+    40% {background-color: blue;}
+    50% {background-color: black;}
+    60% {background-color: darkslategray;}
+    70% {background-color: silver;}
+    80% {background-color: blue;}
+    90% {background-color: blueviolet;}
+    100% {background-color: darkblue;}
+}
+
+@-webkit-keyframes high {
+    0% {background-color: red;}
+    10% {background-color: orange;}
+    20% {background-color: yellow;}
+    30% {background-color: orange;}
+    40% {background-color: red;}
+    50% {background-color: orange;}
+    60% {background-color: yellow;}
+    70% {background-color: orange;}
+    80% {background-color: orangered;}
+    90% {background-color: red;}
+    100% {background-color: yellow;}
+}
+
+@-webkit-keyframes box {
+    0% {background-color: black;}
+    10% {background-color: darkgray;}
+    20% {background-color: brown;}
+    30% {background-color: firebrick;}
+    40% {background-color: black;}
+    50% {background-color: brown;}
+    60% {background-color: sandybrown;}
+    70% {background-color: saddlebrown;}
+    80% {background-color: black;}
+    90% {background-color: darkgray;}
+    100% {background-color: black;}
 }
