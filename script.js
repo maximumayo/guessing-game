@@ -41,7 +41,8 @@ guessingGame.prototype = {
         }
         else {
             $('#responseDiv').text('You Guessed It! Nice Work!');
-            //$('#gameArea').css('background-color', 'green');
+            $('#gameArea').removeClass('low high').addClass('win');
+            $('.blob, .square').removeClass('blob square');
         }
     },
 

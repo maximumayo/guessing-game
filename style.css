@@ -73,6 +73,11 @@
     animation:low 5s infinite;
 }
 
+.win {
+    opacity: 1;
+    background-color: green;
+}
+
 @-webkit-keyframes rainbow {
     0% {background-color: #DB4040;}
     10% {background-color: #FA9937;}
