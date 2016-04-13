@@ -36,9 +36,7 @@
     margin-top: 75px;
     text-align: center;
     font-size: 3em;
-    animation: text 10s infinite;
-
-    /*color: black;*/
+    animation: text 4s infinite;
 }
 
 .form-control {
@@ -52,7 +50,7 @@
     height: 80px;
     width: 80px;
     opacity: .5;
-    animation: box 4s infinite;
+    animation: box 7s infinite;
 }
 
 .blob {
@@ -75,11 +73,25 @@
 }
 
 .win {
-    opacity: .9;
+    opacity: .8;
     animation: win 7s infinite;
 }
 
 @-webkit-keyframes rainbow {
+    0% {background-color: #DB4040;}
+    10% {background-color: #FA9937;}
+    20% {background-color: #F5E589;}
+    30% {background-color: #99D65C;}
+    40% {background-color: #3FBF50;}
+    50% {background-color: #55C98F;}
+    60% {background-color: #3FDDE8;}
+    70% {background-color: #2D7ECF;}
+    80% {background-color: #3434AD;}
+    90% {background-color: #7D3CBD;}
+    100% {background-color: #F1428F;}
+}
+
+@keyframes rainbow {
     0% {background-color: #DB4040;}
     10% {background-color: #FA9937;}
     20% {background-color: #F5E589;}
@@ -107,7 +119,35 @@
     100% {background-color: darkblue;}
 }
 
+@keyframes lowguess {
+    0% {background-color: blue;}
+    10% {background-color: blueviolet;}
+    20% {background-color: lightgrey;}
+    30% {background-color: gray;}
+    40% {background-color: blue;}
+    50% {background-color: black;}
+    60% {background-color: darkslategray;}
+    70% {background-color: silver;}
+    80% {background-color: blue;}
+    90% {background-color: blueviolet;}
+    100% {background-color: darkblue;}
+}
+
 @-webkit-keyframes highguess {
+    0% {background-color: red;}
+    10% {background-color: orange;}
+    20% {background-color: yellow;}
+    30% {background-color: orange;}
+    40% {background-color: red;}
+    50% {background-color: orange;}
+    60% {background-color: yellow;}
+    70% {background-color: orange;}
+    80% {background-color: orangered;}
+    90% {background-color: red;}
+    100% {background-color: yellow;}
+}
+
+@keyframes highguess {
     0% {background-color: red;}
     10% {background-color: orange;}
     20% {background-color: yellow;}
@@ -135,30 +175,40 @@
     100% {background-color: black;}
 }
 
+@keyframes box {
+    0% {background-color: black;}
+    10% {background-color: darkgray;}
+    20% {background-color: brown;}
+    30% {background-color: firebrick;}
+    40% {background-color: black;}
+    50% {background-color: brown;}
+    60% {background-color: sandybrown;}
+    70% {background-color: saddlebrown;}
+    80% {background-color: black;}
+    90% {background-color: darkgray;}
+    100% {background-color: black;}
+}
+
 @-webkit-keyframes win {
     0% {background-color: green;}
-    10% {background-color: darkgreen;}
-    20% {background-color: green;}
-    30% {background-color: darkgreen;}
-    40% {background-color: green;}
     50% {background-color: darkgreen;}
-    60% {background-color: green;}
-    70% {background-color: darkgreen;}
-    80% {background-color: green;}
-    90% {background-color: darkgreen;}
+    100% {background-color: green;}
+}
+
+@keyframes win {
+    0% {background-color: green;}
+    50% {background-color: darkgreen;}
     100% {background-color: green;}
 }
 
 @-webkit-keyframes text {
     0% {color: black;}
-    10% {color: white;}
-    20% {color: white;}
-    30% {color: black;}
-    40% {color: white;}
-    50% {color: black;}
-    60% {color: white;}
-    70% {color: black;}
-    80% {color: white;}
-    90% {color: black;}
-    100% {color: white;}
+    50% {color: white;}
+    100% {color: black;}
+}
+
+@keyframes text {
+    0% {color: black;}
+    50% {color: white;}
+    100% {color: black;}
 }
