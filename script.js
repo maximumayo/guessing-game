@@ -110,7 +110,7 @@ var winMusic = new Audio('sounds/intro.mp3');
 var up = new Audio('sounds/down.mp3');
 var down = new Audio('sounds/up.mp3');
 
-winMusic.volume = .3;
+winMusic.volume = .7;
 up.volume = .4;
 down.volume = .4;
 
