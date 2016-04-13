@@ -3,10 +3,18 @@
     width: 100vw;
 }
 
-.form-group {
+.board {
+    position: absolute;
+    margin-top: 75px;
     text-align: center;
-    font-size: 2em;
-    color: #acb6c0;
+    font-size: 3em;
+    animation: text 4s infinite;
+}
+
+.form-control {
+    width: 25%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 #gameArea {
@@ -29,20 +37,6 @@
     font-size: 1em;
     width: 80%;
     padding: 0;
-}
-
-.form-group {
-    position: absolute;
-    margin-top: 75px;
-    text-align: center;
-    font-size: 3em;
-    animation: text 4s infinite;
-}
-
-.form-control {
-    width: 25%;
-    margin: 0 auto;
-    text-align: center;
 }
 
 .square {
@@ -78,145 +72,361 @@
 }
 
 @-webkit-keyframes rainbow {
-    0% {background-color: #DB4040;}
-    10% {background-color: #FA9937;}
-    20% {background-color: #F5E589;}
-    30% {background-color: #99D65C;}
-    40% {background-color: #3FBF50;}
-    50% {background-color: #55C98F;}
-    60% {background-color: #3FDDE8;}
-    70% {background-color: #2D7ECF;}
-    80% {background-color: #3434AD;}
-    90% {background-color: #7D3CBD;}
-    100% {background-color: #F1428F;}
+    0% {
+        background-color: #DB4040;
+    }
+    10% {
+        background-color: #FA9937;
+    }
+    20% {
+        background-color: #F5E589;
+    }
+    30% {
+        background-color: #99D65C;
+    }
+    40% {
+        background-color: #3FBF50;
+    }
+    50% {
+        background-color: #55C98F;
+    }
+    60% {
+        background-color: #3FDDE8;
+    }
+    70% {
+        background-color: #2D7ECF;
+    }
+    80% {
+        background-color: #3434AD;
+    }
+    90% {
+        background-color: #7D3CBD;
+    }
+    100% {
+        background-color: #F1428F;
+    }
 }
 
 @keyframes rainbow {
-    0% {background-color: #DB4040;}
-    10% {background-color: #FA9937;}
-    20% {background-color: #F5E589;}
-    30% {background-color: #99D65C;}
-    40% {background-color: #3FBF50;}
-    50% {background-color: #55C98F;}
-    60% {background-color: #3FDDE8;}
-    70% {background-color: #2D7ECF;}
-    80% {background-color: #3434AD;}
-    90% {background-color: #7D3CBD;}
-    100% {background-color: #F1428F;}
+    0% {
+        background-color: #DB4040;
+    }
+    10% {
+        background-color: #FA9937;
+    }
+    20% {
+        background-color: #F5E589;
+    }
+    30% {
+        background-color: #99D65C;
+    }
+    40% {
+        background-color: #3FBF50;
+    }
+    50% {
+        background-color: #55C98F;
+    }
+    60% {
+        background-color: #3FDDE8;
+    }
+    70% {
+        background-color: #2D7ECF;
+    }
+    80% {
+        background-color: #3434AD;
+    }
+    90% {
+        background-color: #7D3CBD;
+    }
+    100% {
+        background-color: #F1428F;
+    }
 }
 
 @-webkit-keyframes lowguess {
-    0% {background-color: blue;}
-    10% {background-color: blueviolet;}
-    20% {background-color: lightgrey;}
-    30% {background-color: gray;}
-    40% {background-color: blue;}
-    50% {background-color: black;}
-    60% {background-color: darkslategray;}
-    70% {background-color: silver;}
-    80% {background-color: blue;}
-    90% {background-color: blueviolet;}
-    100% {background-color: darkblue;}
+    0% {
+        background-color: blue;
+    }
+    10% {
+        background-color: blueviolet;
+    }
+    20% {
+        background-color: lightgrey;
+    }
+    30% {
+        background-color: gray;
+    }
+    40% {
+        background-color: blue;
+    }
+    50% {
+        background-color: black;
+    }
+    60% {
+        background-color: darkslategray;
+    }
+    70% {
+        background-color: silver;
+    }
+    80% {
+        background-color: blue;
+    }
+    90% {
+        background-color: blueviolet;
+    }
+    100% {
+        background-color: darkblue;
+    }
 }
 
 @keyframes lowguess {
-    0% {background-color: blue;}
-    10% {background-color: blueviolet;}
-    20% {background-color: lightgrey;}
-    30% {background-color: gray;}
-    40% {background-color: blue;}
-    50% {background-color: black;}
-    60% {background-color: darkslategray;}
-    70% {background-color: silver;}
-    80% {background-color: blue;}
-    90% {background-color: blueviolet;}
-    100% {background-color: darkblue;}
+    0% {
+        background-color: blue;
+    }
+    10% {
+        background-color: blueviolet;
+    }
+    20% {
+        background-color: lightgrey;
+    }
+    30% {
+        background-color: gray;
+    }
+    40% {
+        background-color: blue;
+    }
+    50% {
+        background-color: black;
+    }
+    60% {
+        background-color: darkslategray;
+    }
+    70% {
+        background-color: silver;
+    }
+    80% {
+        background-color: blue;
+    }
+    90% {
+        background-color: blueviolet;
+    }
+    100% {
+        background-color: darkblue;
+    }
 }
 
 @-webkit-keyframes highguess {
-    0% {background-color: red;}
-    10% {background-color: orange;}
-    20% {background-color: yellow;}
-    30% {background-color: orange;}
-    40% {background-color: red;}
-    50% {background-color: orange;}
-    60% {background-color: yellow;}
-    70% {background-color: orange;}
-    80% {background-color: orangered;}
-    90% {background-color: red;}
-    100% {background-color: yellow;}
+    0% {
+        background-color: red;
+    }
+    10% {
+        background-color: orange;
+    }
+    20% {
+        background-color: yellow;
+    }
+    30% {
+        background-color: orange;
+    }
+    40% {
+        background-color: red;
+    }
+    50% {
+        background-color: orange;
+    }
+    60% {
+        background-color: yellow;
+    }
+    70% {
+        background-color: orange;
+    }
+    80% {
+        background-color: orangered;
+    }
+    90% {
+        background-color: red;
+    }
+    100% {
+        background-color: yellow;
+    }
 }
 
 @keyframes highguess {
-    0% {background-color: red;}
-    10% {background-color: orange;}
-    20% {background-color: yellow;}
-    30% {background-color: orange;}
-    40% {background-color: red;}
-    50% {background-color: orange;}
-    60% {background-color: yellow;}
-    70% {background-color: orange;}
-    80% {background-color: orangered;}
-    90% {background-color: red;}
-    100% {background-color: yellow;}
+    0% {
+        background-color: red;
+    }
+    10% {
+        background-color: orange;
+    }
+    20% {
+        background-color: yellow;
+    }
+    30% {
+        background-color: orange;
+    }
+    40% {
+        background-color: red;
+    }
+    50% {
+        background-color: orange;
+    }
+    60% {
+        background-color: yellow;
+    }
+    70% {
+        background-color: orange;
+    }
+    80% {
+        background-color: orangered;
+    }
+    90% {
+        background-color: red;
+    }
+    100% {
+        background-color: yellow;
+    }
 }
 
 @-webkit-keyframes box {
-    0% {background-color: black;}
-    10% {background-color: darkgray;}
-    20% {background-color: brown;}
-    30% {background-color: firebrick;}
-    40% {background-color: black;}
-    50% {background-color: brown;}
-    60% {background-color: sandybrown;}
-    70% {background-color: saddlebrown;}
-    80% {background-color: black;}
-    90% {background-color: darkgray;}
-    100% {background-color: black;}
+    0% {
+        background-color: black;
+    }
+    10% {
+        background-color: darkgray;
+    }
+    20% {
+        background-color: brown;
+    }
+    30% {
+        background-color: firebrick;
+    }
+    40% {
+        background-color: black;
+    }
+    50% {
+        background-color: brown;
+    }
+    60% {
+        background-color: sandybrown;
+    }
+    70% {
+        background-color: saddlebrown;
+    }
+    80% {
+        background-color: black;
+    }
+    90% {
+        background-color: darkgray;
+    }
+    100% {
+        background-color: black;
+    }
 }
 
 @keyframes box {
-    0% {background-color: black;}
-    10% {background-color: darkgray;}
-    20% {background-color: brown;}
-    30% {background-color: firebrick;}
-    40% {background-color: black;}
-    50% {background-color: brown;}
-    60% {background-color: sandybrown;}
-    70% {background-color: saddlebrown;}
-    80% {background-color: black;}
-    90% {background-color: darkgray;}
-    100% {background-color: black;}
+    0% {
+        background-color: black;
+    }
+    10% {
+        background-color: darkgray;
+    }
+    20% {
+        background-color: brown;
+    }
+    30% {
+        background-color: firebrick;
+    }
+    40% {
+        background-color: black;
+    }
+    50% {
+        background-color: brown;
+    }
+    60% {
+        background-color: sandybrown;
+    }
+    70% {
+        background-color: saddlebrown;
+    }
+    80% {
+        background-color: black;
+    }
+    90% {
+        background-color: darkgray;
+    }
+    100% {
+        background-color: black;
+    }
 }
 
 @-webkit-keyframes win {
-    0% {background-color: green;}
-    15% {background-color: darkgreen;}
-    25% {background-color: green;}
-    50% {background-color: darkgreen;}
-    65% {background-color: green;}
-    85% {background-color: darkgreen;}
-    100% {background-color: green;}
+    0% {
+        background-color: green;
+    }
+    15% {
+        background-color: darkgreen;
+    }
+    25% {
+        background-color: green;
+    }
+    50% {
+        background-color: darkgreen;
+    }
+    65% {
+        background-color: green;
+    }
+    85% {
+        background-color: darkgreen;
+    }
+    100% {
+        background-color: green;
+    }
 }
 
 @keyframes win {
-    0% {background-color: green;}
-    15% {background-color: darkgreen;}
-    25% {background-color: green;}
-    50% {background-color: darkgreen;}
-    65% {background-color: green;}
-    85% {background-color: darkgreen;}
-    100% {background-color: green;}
+    0% {
+        background-color: green;
+    }
+    15% {
+        background-color: darkgreen;
+    }
+    25% {
+        background-color: green;
+    }
+    50% {
+        background-color: darkgreen;
+    }
+    65% {
+        background-color: green;
+    }
+    85% {
+        background-color: darkgreen;
+    }
+    100% {
+        background-color: green;
+    }
 }
 
 @-webkit-keyframes text {
-    0% {color: black;}
-    50% {color: white;}
-    100% {color: black;}
+    0% {
+        color: black;
+    }
+    50% {
+        color: white;
+    }
+    100% {
+        color: black;
+    }
 }
 
 @keyframes text {
-    0% {color: black;}
-    50% {color: white;}
-    100% {color: black;}
+    0% {
+        color: black;
+    }
+    50% {
+        color: white;
+    }
+    100% {
+        color: black;
+    }
 }

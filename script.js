@@ -106,7 +106,6 @@ guessingGame.prototype = {
 
 var game = new guessingGame();
 
-
 var backMusic = new Audio('sounds/backing.mp3');
 var winMusic = new Audio('sounds/intro.mp3');
 var up = new Audio('sounds/down.mp3');
