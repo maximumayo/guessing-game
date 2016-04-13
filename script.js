@@ -1,5 +1,11 @@
 $(document).ready(function () {
+    //loop main game music
+    backMusic.addEventListener('ended', function () {
+        backMusic.currentTime = 0;
+        backMusic.play();
+    }, false);
     backMusic.play();
+
     $('#submit').click(function () {
         game.makeGuess();
         $('#guessInput').val("");
@@ -33,12 +39,15 @@ guessingGame.prototype = {
             $('#responseDiv').text(guess + ' is too low. try again');
             $('#gameArea').removeClass('high').addClass('low');
             $('.square').addClass('blob').removeClass('square');
+            down.play();
 
         }
         else if (guess > this.secretNumber) {
             $('#responseDiv').text(guess + ' is too high. try again');
             $('#gameArea').removeClass('low').addClass('high');
             $('.blob').addClass('square').removeClass('blob');
+            up.play();
+
         }
         else {
             $('#responseDiv').text('You Guessed It! Nice Work!');
@@ -46,12 +55,13 @@ guessingGame.prototype = {
             $('.blob, .square').removeClass('blob square');
             backMusic.pause();
             backMusic.currentTime = 0;
-            idleMusic.currentTime = 0;
-            idleMusic.addEventListener('ended', function () {
-                idleMusic.currentTime = 0;
-                idleMusic.play();
+            winMusic.currentTime = 0;
+            //loop win music
+            winMusic.addEventListener('ended', function () {
+                winMusic.currentTime = 0;
+                winMusic.play();
             }, false);
-            idleMusic.play();
+            winMusic.play();
         }
     },
 
@@ -98,9 +108,13 @@ function moveDivs() {
 }
 
 var backMusic = new Audio('sounds/backing.mp3');
-var idleMusic = new Audio('sounds/intro.mp3');
+var winMusic = new Audio('sounds/intro.mp3');
+var up = new Audio('sounds/down.mp3');
+var down = new Audio('sounds/up.mp3');
 
-idleMusic.volume = .3;
+winMusic.volume = .4;
+up.volume = .4;
+down.volume = .4;
 
 //call blobs in motion
 $('document').ready(function () {
@@ -113,9 +127,8 @@ $('document').ready(function () {
         $('#guessInput').val("");
         makeDivs();
         moveDivs();
-        idleMusic.pause();
+        winMusic.pause();
         backMusic.currentTime = 0;
         backMusic.play();
     });
 });
-

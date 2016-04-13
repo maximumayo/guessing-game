@@ -36,7 +36,9 @@
     margin-top: 75px;
     text-align: center;
     font-size: 3em;
-    color: black;
+    animation: text 10s infinite;
+
+    /*color: black;*/
 }
 
 .form-control {
@@ -50,7 +52,7 @@
     height: 80px;
     width: 80px;
     opacity: .5;
-    animation:box 4s infinite;
+    animation: box 4s infinite;
 }
 
 .blob {
@@ -59,22 +61,22 @@
     width: 80px;
     border-radius: 40px;
     opacity: .5;
-    animation:rainbow 7s infinite;
+    animation: rainbow 7s infinite;
 }
 
 .high {
     opacity: .8;
-    animation:high 7s infinite;
+    animation: highguess 7s infinite;
 }
 
 .low {
     opacity: .8;
-    animation:low 7s infinite;
+    animation: lowguess 7s infinite;
 }
 
 .win {
     opacity: .9;
-    animation:win 7s infinite;
+    animation: win 7s infinite;
 }
 
 @-webkit-keyframes rainbow {
@@ -91,7 +93,7 @@
     100% {background-color: #F1428F;}
 }
 
-@-webkit-keyframes low {
+@-webkit-keyframes lowguess {
     0% {background-color: blue;}
     10% {background-color: blueviolet;}
     20% {background-color: lightgrey;}
@@ -105,7 +107,7 @@
     100% {background-color: darkblue;}
 }
 
-@-webkit-keyframes high {
+@-webkit-keyframes highguess {
     0% {background-color: red;}
     10% {background-color: orange;}
     20% {background-color: yellow;}
@@ -145,4 +147,18 @@
     80% {background-color: green;}
     90% {background-color: darkgreen;}
     100% {background-color: green;}
+}
+
+@-webkit-keyframes text {
+    0% {color: black;}
+    10% {color: white;}
+    20% {color: white;}
+    30% {color: black;}
+    40% {color: white;}
+    50% {color: black;}
+    60% {color: white;}
+    70% {color: black;}
+    80% {color: white;}
+    90% {color: black;}
+    100% {color: white;}
 }
