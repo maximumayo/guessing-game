@@ -34,21 +34,20 @@ guessingGame.prototype = {
     checkGuess: function (guess) {
 
         if (guess < this.secretNumber) {
-            $('#responseDiv').text(guess + ' is too low. try again');
+            $('#responseDiv').text(guess + ' is too low. Try again...');
             $('#gameArea').removeClass('high').addClass('low');
             $('.square').addClass('blob').removeClass('square');
             down.play();
-
         }
         else if (guess > this.secretNumber) {
-            $('#responseDiv').text(guess + ' is too high. try again');
+            $('#responseDiv').text(guess + ' is too high. Try again...');
             $('#gameArea').removeClass('low').addClass('high');
             $('.blob').addClass('square').removeClass('blob');
             up.play();
-
         }
         else {
-            $('#responseDiv').text('You Guessed It! Nice Work!');
+            $('#responseDiv').text('Nice Work!');
+            $('#instructions').text("You guessed the secret number!");
             $('#gameArea').removeClass('low high').addClass('win');
             $('.blob, .square').removeClass('blob square');
             backMusic.pause();
@@ -110,7 +109,7 @@ var winMusic = new Audio('sounds/intro.mp3');
 var up = new Audio('sounds/down.mp3');
 var down = new Audio('sounds/up.mp3');
 
-winMusic.volume = .4;
+winMusic.volume = .3;
 up.volume = .4;
 down.volume = .4;
 
@@ -124,6 +123,7 @@ $('document').ready(function () {
         $('.blob, .square').removeClass('blob square');
         $('#guessInput').val("");
         $('#responseDiv').text('Give it a try!');
+        $('#instructions').text('Guess the secret number between 1 and 100');
         makeDivs();
         moveDivs();
         winMusic.pause();
