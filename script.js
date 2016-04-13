@@ -123,6 +123,7 @@ $('document').ready(function () {
         $('#gameArea').removeClass('win low high');
         $('.blob, .square').removeClass('blob square');
         $('#guessInput').val("");
+        $('#responseDiv').text('Give it a try!');
         makeDivs();
         moveDivs();
         winMusic.pause();
